@@ -1,0 +1,15 @@
+{
+  "name": "linktracking",
+  "version": "1.0.0",
+  "description": "Links and Clicks tracking",
+  "main": "linktrack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Dang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mongodb": "^2.1.14"
+  }
+}

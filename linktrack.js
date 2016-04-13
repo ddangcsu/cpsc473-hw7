@@ -122,6 +122,30 @@ app.get(wsClick, function (request, response) {
 
 });
 
+// Add administrative to rest/delete all documents in model
+app.delete("/reset", function (request, response) {
+    var truncate = false;
+    if (request.body.hasOwnProperty("admin") && request.body.admin === "true") {
+        truncate = true;
+    }
+
+    if (truncate) {
+        // Delete collection and reset
+        Site.remove({}, function (err) {
+            if (err) {
+                console.log("Has problem truncate sites");
+                response.status(500).end("Has problem truncate");
+            } else {
+                response.status(200).end("Sites Truncated");
+            }
+        });
+    } else {
+        // Response bad request
+        response.status(404).end();
+    }
+
+});
+
 // Run the server on the serverPort
 app.listen(serverPort);
 

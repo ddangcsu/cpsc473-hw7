@@ -29,7 +29,8 @@ var siteSchema = mongoose.Schema({
     title: {
         type: String,
         required: true,
-        unique: true},
+        unique: true
+    },
     link: String,
     click: Number,
 });
